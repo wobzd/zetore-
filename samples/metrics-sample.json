@@ -1,0 +1,31 @@
+{
+  "source": "测试样例（非真实数据）",
+  "metricsYear": 2024,
+  "records": [
+    {
+      "name": "Atmospheric Chemistry and Physics",
+      "issn": "1680-7324",
+      "jif": 9.9,
+      "jif5": 9.5,
+      "jci": 1.5,
+      "jcr": "Q1",
+      "cas": "1区",
+      "casMajor": "地球科学",
+      "casMinor": "气象与大气科学"
+    },
+    {
+      "name": "Journal of Aerosol Science",
+      "issn": "0021-8502",
+      "jif": 4.5,
+      "jcr": "Q1",
+      "cas": "2区"
+    },
+    {
+      "name": "Aerosol Science and Technology",
+      "issn": "0278-6826",
+      "jif": 3.8,
+      "jcr": "Q2",
+      "cas": "3区"
+    }
+  ]
+}

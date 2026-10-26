@@ -1,0 +1,5 @@
+node_modules/
+dist/
+content/scripts/index.js
+content/scripts/index.js.map
+*.log

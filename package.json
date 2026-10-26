@@ -1,0 +1,16 @@
+{
+  "name": "zotero-reading-assistant",
+  "version": "0.4.4",
+  "private": true,
+  "description": "Zotero 文献阅读助手 — M2 F2 translation + F3 full-text reading",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "adm-zip": "^0.5.18",
+    "esbuild": "^0.25.12",
+    "typescript": "^5.6.0"
+  }
+}

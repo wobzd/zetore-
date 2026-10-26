@@ -1,0 +1,195 @@
+#zra-prefs {
+  box-sizing: border-box;
+  max-width: 680px;
+  padding: 4px 0 20px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: inherit;
+}
+
+#zra-prefs .zra-title {
+  margin: 0 0 6px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+#zra-prefs .zra-section-title {
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+}
+
+#zra-prefs .zra-note {
+  margin: 0 0 14px;
+  opacity: 0.78;
+}
+
+#zra-prefs .zra-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+#zra-prefs .zra-field > label {
+  font-weight: 500;
+}
+
+#zra-prefs input[type="text"],
+#zra-prefs input[type="password"],
+#zra-prefs input[type="number"],
+#zra-prefs select,
+#zra-prefs textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 28px;
+  padding: 3px 7px;
+  font: inherit;
+  color: inherit;
+  background: Field;
+  border: 1px solid color-mix(in srgb, currentColor 28%, transparent);
+  border-radius: 4px;
+}
+
+#zra-prefs textarea {
+  min-height: 120px;
+  padding: 7px 9px;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.55;
+  resize: vertical;
+}
+
+#zra-prefs input:focus,
+#zra-prefs select:focus,
+#zra-prefs textarea:focus {
+  outline: 2px solid Highlight;
+  outline-offset: -1px;
+}
+
+#zra-prefs .zra-hint {
+  font-size: 11.5px;
+  opacity: 0.68;
+}
+
+#zra-prefs .zra-hint code,
+#zra-prefs code {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.95em;
+  padding: 0 3px;
+  border-radius: 3px;
+  background: color-mix(in srgb, currentColor 8%, transparent);
+}
+
+#zra-prefs .zra-key-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+#zra-prefs .zra-key-row input {
+  flex: 1 1 auto;
+}
+
+#zra-prefs .zra-model-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+#zra-prefs .zra-model-row select {
+  flex: 1 1 auto;
+  width: auto;
+  min-width: 0;
+}
+
+#zra-prefs .zra-model-row button {
+  flex: 0 0 auto;
+}
+
+#zra-prefs .zra-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+#zra-prefs .zra-check label {
+  display: flex;
+  gap: 7px;
+  align-items: flex-start;
+  font-weight: 400;
+}
+
+#zra-prefs .zra-check input {
+  margin-top: 3px;
+}
+
+#zra-prefs .zra-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+}
+
+#zra-prefs button {
+  min-height: 28px;
+  padding: 3px 13px;
+  font: inherit;
+  color: inherit;
+  background: ButtonFace;
+  border: 1px solid color-mix(in srgb, currentColor 28%, transparent);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#zra-prefs button:hover {
+  background: color-mix(in srgb, currentColor 10%, ButtonFace);
+}
+
+#zra-prefs button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+#zra-prefs .zra-primary {
+  font-weight: 600;
+  color: AccentText;
+  background: AccentColor;
+  border-color: transparent;
+}
+
+#zra-prefs .zra-primary:hover {
+  background: color-mix(in srgb, AccentColor 88%, black);
+}
+
+#zra-prefs .zra-secondary {
+  flex: 0 0 auto;
+}
+
+#zra-prefs .zra-status {
+  flex: 1 1 220px;
+  min-width: 160px;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+#zra-prefs .zra-status.zra-ok {
+  color: #1a7f37;
+}
+
+#zra-prefs .zra-status.zra-error {
+  color: #c0392b;
+}
+
+#zra-prefs .zra-status.zra-busy {
+  opacity: 0.7;
+}
+
+#zra-prefs .zra-footnote {
+  margin-top: 18px;
+  margin-bottom: 0;
+  font-size: 11.5px;
+}

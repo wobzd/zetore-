@@ -1,0 +1,126 @@
+<!--
+  Zotero Settings → 文献阅读助手
+  Loaded by Zotero.PreferencePanes.register() from src/plugin.ts.
+  XUL root is required by the preferences window; the form itself is HTML.
+  Do not add an XML declaration here: Zotero wraps this fragment in <box>
+  before parsing, and a declaration inside the wrapper is not well-formed XML.
+-->
+<vbox xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      flex="1">
+  <html:div id="zra-prefs" class="zra-prefs">
+    <html:h2 class="zra-title">AI 服务</html:h2>
+    <html:p class="zra-note">
+      用于划词翻译与全文解读。API Key 只保存在本机 Zotero 配置中，
+      不会写入插件数据目录、日志或自检报告。
+    </html:p>
+
+    <html:div class="zra-field">
+      <html:label for="zra-provider-preset">服务预设</html:label>
+      <html:select id="zra-provider-preset">
+        <html:option value="deepseek">DeepSeek（默认）</html:option>
+        <html:option value="agnes">Agnes AI（OpenAI Compatible）</html:option>
+        <html:option value="qwen">通义千问（DashScope 兼容模式）</html:option>
+        <html:option value="custom">自定义（MiMo / 其他 OpenAI 兼容服务）</html:option>
+      </html:select>
+    </html:div>
+
+    <html:div class="zra-field">
+      <html:label for="zra-provider-name">服务名称</html:label>
+      <html:input id="zra-provider-name" type="text" placeholder="DeepSeek"/>
+    </html:div>
+
+    <html:div class="zra-field">
+      <html:label for="zra-base-url">Base URL</html:label>
+      <html:input id="zra-base-url" type="text" spellcheck="false"
+                  placeholder="https://api.deepseek.com/v1"/>
+      <html:div class="zra-hint">
+        填服务根地址即可，插件会自动追加 <html:code>/chat/completions</html:code>；
+        也可以直接粘贴完整的 chat completions 地址。
+      </html:div>
+    </html:div>
+
+    <html:div class="zra-field">
+      <html:label for="zra-api-key">API Key</html:label>
+      <html:div class="zra-key-row">
+        <html:input id="zra-api-key" type="password" spellcheck="false" autocomplete="off"
+                    placeholder="sk-..."/>
+        <html:button id="zra-toggle-key" type="button" class="zra-secondary">显示</html:button>
+      </html:div>
+    </html:div>
+
+    <html:div class="zra-field">
+      <html:label for="zra-model">模型</html:label>
+      <html:div class="zra-model-row">
+        <html:select id="zra-model" aria-label="选择模型">
+          <html:option value="">选择模型…</html:option>
+          <html:option value="deepseek-flash">DeepSeek V4.1 Flash（1017）— deepseek-flash</html:option>
+          <html:option value="deepseek-v4-pro">DeepSeek V4 Pro — deepseek-v4-pro</html:option>
+          <html:option value="agnes-2.0-flash">Agnes 2.0 Flash — 编程/推理（256K ctx）</html:option>
+          <html:option value="agnes-1.5-flash">Agnes 1.5 Flash — 通用对话</html:option>
+          <html:option value="agnes-2.5-flash">Agnes 2.5 Flash — 最强编程/推理（512K ctx）</html:option>
+          <html:option value="qwen-plus">通义千问 Plus — qwen-plus</html:option>
+          <html:option value="qwen-max">通义千问 Max — qwen-max</html:option>
+          <html:option value="qwen-turbo">通义千问 Turbo — qwen-turbo</html:option>
+          <html:option value="qwen-long">通义千问 Long — qwen-long</html:option>
+        </html:select>
+        <html:button id="zra-fetch-models" type="button" class="zra-secondary">获取模型</html:button>
+      </html:div>
+      <html:div class="zra-hint">
+        模型来自当前 Base URL；可点“获取模型”读取服务商的
+        <html:code>/models</html:code> 列表。DeepSeek 官方只接受
+        <html:code>deepseek-flash</html:code> 和 <html:code>deepseek-v4-pro</html:code>；
+        <html:code>DeepSeek-V4.1-Flash-1017</html:code> 是版本名，已映射到
+        <html:code>deepseek-flash</html:code>。
+      </html:div>
+    </html:div>
+
+    <html:div class="zra-grid">
+      <html:div class="zra-field">
+        <html:label for="zra-max-tokens">最大输出 tokens</html:label>
+        <html:input id="zra-max-tokens" type="number" min="64" max="32768" step="64"/>
+      </html:div>
+      <html:div class="zra-field">
+        <html:label for="zra-temperature">温度</html:label>
+        <html:input id="zra-temperature" type="number" min="0" max="2" step="0.1"/>
+      </html:div>
+    </html:div>
+
+    <html:div class="zra-field zra-check">
+      <html:label>
+        <html:input id="zra-auto-translate" type="checkbox"/>
+        选中文字稳定约 400 ms 后自动翻译（关闭后仍可手动点“翻译”）
+      </html:label>
+    </html:div>
+
+    <html:h2 class="zra-title zra-section-title">术语表</html:h2>
+    <html:p class="zra-note">
+      为简体中文译文固定专业术语译法。术语表只影响划词翻译，不影响全文解读；
+      English 目标暂不使用术语表。
+    </html:p>
+
+    <html:div class="zra-field">
+      <html:label for="zra-glossary">术语对照（每行一条）</html:label>
+      <html:textarea id="zra-glossary" rows="6" spellcheck="false"
+                     placeholder="photovoltaic =&gt; 光伏"></html:textarea>
+      <html:div class="zra-hint">
+        格式：<html:code>原文 =&gt; 译文</html:code>；也支持
+        <html:code>-&gt;</html:code>、<html:code>→</html:code>、Tab 或
+        <html:code>=</html:code>。以 <html:code>#</html:code> 开头的行会被忽略；
+        最多 200 条。修改术语后保存，相关旧翻译缓存自动失效。
+      </html:div>
+      <html:div id="zra-glossary-count" class="zra-hint" role="status">已识别 0 条术语</html:div>
+    </html:div>
+
+    <html:div class="zra-actions">
+      <html:button id="zra-test" type="button">测试连接</html:button>
+      <html:button id="zra-save" type="button" class="zra-primary">保存</html:button>
+      <html:span id="zra-status" class="zra-status" role="status"></html:span>
+    </html:div>
+
+    <html:p class="zra-note zra-footnote">
+      测试连接会用当前表单里的值发起一次最小请求，不会保存设置。
+      保存后，阅读器里的翻译/解读立即生效，无需重启 Zotero。
+    </html:p>
+  </html:div>
+</vbox>

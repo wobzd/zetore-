@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "Zotero 文献阅读助手 (M2)",
+  "version": "0.4.4",
+  "description": "M2: F2 selection translation and F3 full-text reading/Q&A with evidence citations, plus M1 metrics and semantic annotations.",
+  "author": "ZRA",
+  "applications": {
+    "zotero": {
+      "id": "zotero-reading-assistant@plugin.local",
+      "update_url": "https://example.com/zotero-reading-assistant/updates.json",
+      "strict_min_version": "6.999",
+      "strict_max_version": "10.0.*"
+    }
+  }
+}
